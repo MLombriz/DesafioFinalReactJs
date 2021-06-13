@@ -1,8 +1,9 @@
-nav{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight:500;
+nav {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
 }
-.navbar{
+
+.navbar {
     background-color: #b25040;
     display: flex;
     flex-direction: row;
@@ -10,14 +11,25 @@ nav{
     width: 100vw;
 }
 
-.logo-container{
+.logo-container {
     left: 0;
-    background-image: url('../NavBar/logo/logo-taller.png');
-    width: 50px;
-    height: 50px;
+
 }
 
-.navbar-container{
+.logoTallerUrbano {
+    height: 100px;
+    width: 100px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.navbar-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -25,22 +37,25 @@ nav{
     padding: 0;
 }
 
-.nav-link{
+.nav-link {
     list-style-type: none;
     margin: 0 20px;
     color: white;
     font-style: italic;
     text-transform: uppercase;
     border-bottom: 2px solid transparent;
-    
+
+    justify-self: center;
+    align-self: center;
+
 }
 
-.nav-link:hover{
+.nav-link:hover {
     transition: linear 0.5s;
     border-bottom: 2px solid white;
 }
 
-a{
- text-decoration: none;
- color: white;   
+a {
+    text-decoration: none;
+    color: white;
 }

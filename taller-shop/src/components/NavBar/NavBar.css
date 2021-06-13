@@ -1,0 +1,17 @@
+nav{
+    background-color: black;
+    min-height: 20vh;
+    display: flex;
+}
+ul{
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    list-style-type: none;
+    justify-content: flex-end;
+    
+}
+li{
+    display: inline;
+    
+}

@@ -1,5 +1,7 @@
 import React from 'react'
 import './CartWidget.css'
+
+// Importo la imagen del Carrito
 import logoCartWidget from './logo/white-cartwidget-1.png'
 
 const CartWidget = () => {

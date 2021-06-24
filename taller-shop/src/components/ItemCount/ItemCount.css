@@ -1,48 +1,47 @@
-.ItemCount{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    margin: 2px;
+.ItemCount {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2px;
 }
 
-.Counter-div{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid rgba(128, 128, 128, 0.575);
-    border-radius: 5px;
+.Counter-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(128, 128, 128, 0.575);
+  border-radius: 5px;
 
-    color: black;
-    font-weight: 700;
+  color: black;
+  font-weight: 700;
 }
-.Counter-div button{
-    background-color: white;
-    font-size: 25px;
-    color: rgb(2, 127, 185);
-    border: none;
-    margin: 0px 4px;
+.Counter-div button {
+  background-color: transparent;
+  font-size: 25px;
+  color: #b25040;
+  border: none;
+  margin: 0px 4px;
 }
-.btn-carrito{
-    border: 1px solid rgb(2, 127, 185);
-    background-color: white;
-    margin-top: 10px;
-    padding: 8px;
-    width: 100%;
-    border-radius: 4px;
-    color: rgb(2, 127, 185);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.Counter-div button:hover {
+  transform: scale(1.5);
 }
-.btn-carrito:hover{
-    background-color: rgb(2, 127, 185);
-    color: white;  
+.btn-carrito {
+  border: 1px solid #b25040;
+  background-color: white;
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 4px;
+  color: #b25040;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.warning{
-    background-color: red;
-    
+.btn-carrito:hover {
+  background-color: #b25040;
+  color: white;
 }

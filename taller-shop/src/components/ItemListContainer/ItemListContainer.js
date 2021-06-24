@@ -1,17 +1,52 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './ItemListContainer.css'
-import {ItemCount} from '../ItemCount/ItemCount'
+import { ItemList } from '../ItemList/ItemList'
 
-const ItemListContainer = ({greeting}) =>{
-    return(
+
+const ItemListContainer = ({ greeting }) => {
+    const [arrayItems, setArrayItems] = useState([]);
+    const getItems = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(setArrayItems(
+                // Genero un array de Items
+                [{
+                    id: 1,
+                    title: "Mesa Rustica 1",
+                    price: 20000,
+                    description: "Mesa en Eucalipto Alistonado, con patas en caño estructural 30 x 30 mm",
+                    size: "2,00 x 1,00 mts",
+                    stock: 10,
+                    pictureUrl: "https://placekitten.com/g/300/200"
+                },
+                {
+                    id: 2,
+                    title: "Mesa Rustica 2",
+                    price: 25000,
+                    description: "Mesa en Eucalipto Alistonado, con patas en caño estructural 30 x 30 mm",
+                    size: "2,00 x 2,00 mts",
+                    stock: 4,
+                    pictureUrl: "https://placekitten.com/g/300/200"
+                },
+                {
+                    id: 3,
+                    title: "Mesa Rustica 3",
+                    price: 8000,
+                    description: "Mesa en Eucalipto Alistonado, con patas en caño estructural 30 x 30 mm",
+                    size: "2,00 x 1,00 mts",
+                    stock: 20,
+                    pictureUrl: "https://placekitten.com/g/300/200"
+                }]
+            ));
+        }, 2000);
+    })
+    console.log(arrayItems)
+    return (
         <div>
-            <p>
-                {greeting}
-            </p>
-           <ItemCount stock='10' initial='5' />
+            <p className="greeting">{greeting}</p>
+            <ItemList items={arrayItems} />
         </div>
-        
-    )
+
+    );
 }
 
-export {ItemListContainer}
+export { ItemListContainer }

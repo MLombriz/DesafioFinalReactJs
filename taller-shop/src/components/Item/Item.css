@@ -1,0 +1,40 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+.item-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2px;
+  padding: 10px;
+  border: 1px solid transparent;
+  width: fit-content;
+}
+.item-container:hover {
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+}
+
+.item-img {
+  align-self: center;
+}
+
+.item-title {
+  font-variant: small-caps;
+  align-self: flex-start;
+  color: black;
+  font-weight: 700;
+  margin: 2px 0px;
+}
+.item-description {
+  color: black;
+  width: 300px;
+  font-style: italic;
+  font-variant: normal;
+}
+.item-price {
+  font-weight: bold;
+  margin: 4px 0px;
+}

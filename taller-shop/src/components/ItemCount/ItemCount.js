@@ -1,9 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './ItemCount.css'
-
-
-// - De no haber stock el click no debe tener efecto y por ende no ejecutar el callback onAdd
-// - Si hay stock al clickear el botón se debe ejecutar onAdd con un número que debe ser la cantidad seleccionada por el usuario.
 
 const ItemCount = ({ initial, stock, onAdd }) => {
     const [numero, setNumero] = useState(parseInt(initial))
@@ -42,7 +38,4 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     )
 }
 
-//function checkStock() {
-//    console.log(document.getElementById('warninStock'))
-//}
 export { ItemCount }

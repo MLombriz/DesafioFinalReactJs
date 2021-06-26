@@ -1,0 +1,8 @@
+.page-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  max-width: 100vw;
+  min-height: 100vh;
+}

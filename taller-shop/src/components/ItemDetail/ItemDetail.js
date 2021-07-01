@@ -1,5 +1,6 @@
 import './ItemDetail.css'
 import React from 'react'
+import { ItemCount } from '../ItemCount/ItemCount'
 
 const ItemDetail = ({ item }) => {
     return (
@@ -10,6 +11,10 @@ const ItemDetail = ({ item }) => {
             <p className="itemDetail-materials">Elaborado con: {item.materials}</p>
             <p className="itemDetail-size">Medidas: {item.size}</p>
             <p className="itemDetail-price">AR$ {item.price}</p>
+            <div>
+                <ItemCount stock={item.stock} />
+            </div>
+
         </div>
     )
 }

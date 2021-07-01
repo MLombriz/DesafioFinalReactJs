@@ -1,40 +1,31 @@
 import React, { useState } from 'react'
 import './ItemCount.css'
 
-const ItemCount = ({ initial, stock, onAdd }) => {
+const ItemCount = ({ initial = 0, stock, onAdd }) => {
     const [numero, setNumero] = useState(parseInt(initial))
-    const [myStock, setMyStock] = useState(stock)
-    function ContSumar() {
-        if ((numero < myStock) && (numero >= 0)) {
-            setNumero(numero + 1)
-
+    //const [myStock, setMyStock] = useState(stock)
+    const handleCount = (operator) => {
+        if (operator === '+') {
+            if ((numero < stock) && (numero >= 0)) {
+                setNumero(numero + 1)
+            }
         }
-    }
-    function ContRestar() {
-        if (numero > 0) {
-            setNumero(numero - 1)
-
+        else if (operator === '-') {
+            if (numero > 0) {
+                setNumero(numero - 1)
+            }
         }
-    }
-
-    function Agregar() {
-        var nuevoStock = myStock - numero
-        if ((nuevoStock) >= 0) {
-            setMyStock(nuevoStock)
-            alert(`Ya se agregaron al carrito ${numero} items, quedan ${nuevoStock} en stock`);
-        }
-
     }
 
     return (
         <div className="ItemCount">
             <div className='Counter-div'>
-                <button onClick={ContRestar}><span>-</span></button>
+                <button onClick={() => handleCount('-')}><span>-</span></button>
                 <span>{numero}</span>
-                <button onClick={ContSumar}><span>+</span></button>
+                <button onClick={() => handleCount('+')}><span>+</span></button>
             </div>
-            <button id='btnAdd' className='btn-carrito' onClick={Agregar}>Agregar al Carrito</button>
-        </div>
+            <button id='btnAdd' className='btn-carrito' disabled={stock === 0} onClick={onAdd}>Agregar al Carrito</button>
+        </div >
     )
 }
 

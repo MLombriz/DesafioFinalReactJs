@@ -1,7 +1,7 @@
 import React from 'react'
 import './home.css'
 import { ItemListContainer } from '../../components/ItemListContainer/ItemListContainer'
-import { Page } from '../../pages/page/Page'
+import { Page } from '../../components/page/Page'
 
 export const Home = () => {
     return (

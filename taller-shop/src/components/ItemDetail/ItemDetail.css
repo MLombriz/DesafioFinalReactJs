@@ -1,25 +1,15 @@
 .itemDetail-container {
-  position: absolute;
-  z-index: 100;
-
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
   background-color: white;
-
   border: 1px solid white;
   border-radius: 10px;
   padding: 15px;
 
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-  width: 90vw;
-  height: 90vh;
 }
 
 .itemDetail-title {
@@ -31,4 +21,7 @@
 .itemDetail-img {
   width: 70%;
   height: auto;
+}
+.itemDetail-container p {
+  font-size: 24px;
 }

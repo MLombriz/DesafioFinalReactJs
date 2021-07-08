@@ -1,20 +1,22 @@
 import './ItemDetail.css'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { ItemCount } from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 
 const ItemDetail = ({ item }) => {
     const [quantity, setQuantity] = useState(0)
     const [hidden, setHidden] = useState(false)
+    const { addItem } = useContext(CartContext)
 
     // Al apretar un botton "Agregar Carrito" se ejeucta onAdd:
-    const onAdd = (e) => {
-        setHidden(true)
-        // tmb puedo hacerlo con e.target.value si asigno en button value={quantity}
-        const numberItems = parseInt(e.target.parentElement.children[0].children[1].innerText)
-        setQuantity(numberItems)
-
+    const onAdd = (quantity) => {
+        setHidden(true) //Le genero hidden true para mostrar el boton de "Terminar mi compra"
+        //const numberItems = parseInt(e.target.parentElement.children[0].children[1].innerText)
+        setQuantity(quantity)
+        addItem(item, quantity)
     }
+
     return (
         <div key={item.id} className='itemDetail-container'>
             <img className="itemDetail-img" src={item.pictureUrl} alt={`Prduct Detail Img from id: ${item.id}`} />

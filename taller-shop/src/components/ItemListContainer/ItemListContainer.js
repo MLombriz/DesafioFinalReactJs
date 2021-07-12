@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './ItemListContainer.css'
 import { ItemList } from '../ItemList/ItemList'
 import { productos } from '../../data/data'
+import { dataBase } from '../../firebase/firebase'
 
 const ItemListContainer = ({ greeting }) => {
     const [arrayItems, setArrayItems] = useState([]);

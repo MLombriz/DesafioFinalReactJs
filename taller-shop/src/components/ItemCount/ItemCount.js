@@ -3,7 +3,6 @@ import './ItemCount.css'
 
 const ItemCount = ({ initial = 0, stock, onAdd }) => {
     const [quantity, setQuantity] = useState(parseInt(initial))
-    //const [myStock, setMyStock] = useState(stock)
     const handleCount = (operator) => {
         if (operator === '+') {
             if ((quantity < stock) && (quantity >= 0)) {

@@ -6,7 +6,7 @@ import { CartProvider } from './context/CartContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <CartProvider defaultCart={[]}>
+    <CartProvider>
       <Routes />
     </CartProvider>
   </React.StrictMode>,

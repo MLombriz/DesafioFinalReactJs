@@ -8,6 +8,8 @@
     display: flex;
     box-shadow: 1px 1px 18px 0px rgba(0,0,0,0.59);
     margin: 10px;
+
+    position: relative;
 }
 
 .cartWidget:hover{
@@ -20,4 +22,27 @@
     justify-self: center;
     align-self: center;
     color: white;
+}
+.visibleClass{
+    visibility: visible;
+}
+.inVisibleClass{
+    visibility: hidden;
+}
+.totalItems{
+    position: absolute;
+    bottom: -10px;
+    right: -5px;
+    background-color: hsl(236, 100%, 0%);
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 1px white;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
 }

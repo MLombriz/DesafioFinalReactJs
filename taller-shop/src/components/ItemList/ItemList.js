@@ -11,7 +11,7 @@ const ItemList = ({ items }) => {
             ) : (
                 // Si items.lenght != 0 entonces me genero un Item por cada objeto del array
                 items.map(i => {
-                    return <Item item={i} />
+                    return <Item item={i} key={i.id} />
                 })
             )}
         </div>

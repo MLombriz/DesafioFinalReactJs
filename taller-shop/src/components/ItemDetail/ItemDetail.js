@@ -12,7 +12,6 @@ const ItemDetail = ({ item }) => {
     // Al apretar un botton "Agregar Carrito" se ejeucta onAdd:
     const onAdd = (quantity) => {
         setHidden(true) //Le genero hidden true para mostrar el boton de "Terminar mi compra"
-        //const numberItems = parseInt(e.target.parentElement.children[0].children[1].innerText)
         setQuantity(quantity)
         addItem(item, quantity)
     }

@@ -10,7 +10,7 @@ const Categories = () => {
             <div className='categories-container'>
                 {categoryList.map(cat => {
                     return (
-                        <NavLink to={`/categories/${cat.category}`} >
+                        <NavLink to={`/categories/${cat.category}`} key={cat.idCategory} >
                             <div className='catImg-container' key={cat.idCategory}>
                                 <img src={cat.pictureUrl} alt="Category" className='categoryImg' />
                                 <p className='catTitle'>{cat.category}</p>

@@ -17,7 +17,7 @@ const Category = () => {
                 {productos
                     .filter((i) => i.category === categoryId)
                     .map((i) => (
-                        <Item item={i} />
+                        <Item item={i} key={i.id} />
                     ))}
                 <p>...Estamos trabajando para mejorar el sitio...</p>
             </div>

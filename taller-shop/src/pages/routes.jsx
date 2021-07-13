@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Home } from "./home/home";
-import { Cart } from "./cart/cart";
 import { NotFound } from "./notFound/notFound";
 import { Categories } from "./categories/categories";
 import { Category } from "./category/category";
 import { ItemDetailContainer } from "../components/ItemDetailContainer/ItemDetailContainer";
+import { CartPage } from "./cart/cartPage";
 
 const Routes = () => {
   return (
@@ -24,7 +24,7 @@ const Routes = () => {
           <ItemDetailContainer />
         </Route>
         <Route path="/cart">
-          <Cart />
+          <CartPage />
         </Route>
         <Route path="*">
           <NotFound />

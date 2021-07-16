@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ItemCount.css'
 
-const ItemCount = ({ initial = 0, stock, onAdd }) => {
+const ItemCount = ({ initial = 1, stock, onAdd }) => {
     const [quantity, setQuantity] = useState(parseInt(initial))
     const handleCount = (operator) => {
         if (operator === '+') {

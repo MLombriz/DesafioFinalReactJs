@@ -24,7 +24,10 @@ const ItemDetail = ({ item }) => {
                 <p className="itemDetail-description">{item.description}</p>
                 <p className="itemDetail-materials">Elaborado con: {item.materials}</p>
                 <p className="itemDetail-size">Medidas: {item.size}</p>
-                <p className="itemDetail-price">AR$ {item.price}</p>
+                <p className="itemDetail-price">AR$ {(item.price).toLocaleString('es-AR', {
+                    valute: 'USD',
+                    minimumFractionDigits: 2,
+                })}</p>
                 <div className='ItemCount-container' hidden={hidden}>
                     <ItemCount stock={item.stock} onAdd={onAdd} />
                 </div>

@@ -15,13 +15,11 @@ const ItemDetailContainer = () => {
         const db = dataBase;
         const productCollection = db.collection('muebles');
         const product = productCollection.doc(itemId);
-        console.log('item buscado', itemId)
         product.get().then((doc) => {
             if (!doc.exists) {
                 console.log(`Item Id ${itemId} no existe en el documento`);
                 setNoData(true)
             }
-            console.log(`Item Id ${itemId} encontrado!`);
             setItem({ id: doc.id, ...doc.data() });
         }).catch((err) => {
             console.log('Error buscando el item', err);
@@ -40,7 +38,7 @@ const ItemDetailContainer = () => {
                         <Page>
                             {
                                 loading ?
-                                    (<p>Loading...</p>)
+                                    (<p className='loadingDetailContainer'>Loading...</p>)
                                     :
                                     (
                                         <div className='itemDetailContainer'>

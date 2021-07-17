@@ -1,4 +1,6 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
+import firebase from 'firebase/app'
+import { dataBase } from '../firebase/firebase'
 
 // creo contexto
 const CartContext = createContext()
@@ -7,54 +9,74 @@ const CartContext = createContext()
 const CartProvider = ({ children, defaultCart = [] }) => {
     const [cart, setCart] = useState(defaultCart)
     const [numberItems, setNumberItems] = useState(0)
+    const [totalPrice, setTotalPrice] = useState(0)
+    const [orderId, setOrderId] = useState("")
 
-
-    // Remover un ítem del cart mediante el uso de su Id
+    useEffect(() => {
+        const nextTotal = cart.map(({ item, quantity }) => item.price * quantity)
+            .reduce((subtotalPrice, totalPriceAcum) => subtotalPrice + totalPriceAcum, 0)
+        setTotalPrice(nextTotal)
+    }, [cart])
     const removeItem = (itemId, quantity) => {
-        const newCart = cart.slice()
+        const newCart = [...cart]
         const filterCart = newCart.filter(obj => obj.item.id !== itemId)
         setCart(filterCart)
         setNumberItems(parseInt(numberItems) - parseInt(quantity))
-
     }
-
-    // Agregar cierta cantidad de un ítem al carrito
     const addItem = (item, quantity) => {
-        if (isInCart(item.id)) { //Si el item ya existe en el carrito
+        if (isInCart(item.id)) {
             console.log('Item existente en Cart.. Se sumo la cantidad elegida')
-            const object = cart.find(obj => obj.item.id === item.id) //busco el objeto que cumple la condicion
-            object.quantity += quantity // modifico el valor de cantidad de ese objeto
+            const object = cart.find(obj => obj.item.id === item.id)
+            object.quantity += quantity
             setNumberItems(parseInt(numberItems) + parseInt(quantity))
-
-        } else { // Si el item no se encuentra en el carrito
+        } else {
             updateCart({ item, quantity })
             setNumberItems(parseInt(numberItems) + parseInt(quantity))
-
         }
     }
-
-    // Remover todos los ítems del Carrito
     const clearCart = () => {
         console.log('clearCart: Cart borrado y sin items');
         setCart(defaultCart)
         setNumberItems(0)
-
     }
-
-    // Verifica si esta en el carrito el item
     const isInCart = (itemId) => {
         return cart.find(obj => obj.item.id === parseInt(itemId)) ? true : false
     }
-
-
-    // Para actualizar el Carrito 
     const updateCart = (obj) => {
         setCart([...cart, obj])
     }
+    const getOrder = () => {
+        const orderItems = cart.map(
+            ({ item, quantity }) => ({ id: item.id, title: item.title, price: item.price, quantity: quantity }))
+        return {
+            buyer: {
+                name: 'UserName',
+                phone: '+54 9 11 3202 5894',
+                email: 'comprador@gmail.com'
+            },
+            items: orderItems,
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
+            totalPrice,
+        }
+    }
+    const endPurchase = () => {
+        const newOrder = getOrder()
+        const db = dataBase
+        const orders = db.collection('orders')
+        orders.add(newOrder).then(({ id }) => {
+            setOrderId(id)
+            console.log('id de compra es:', id)
+            alert(`id de compra Generado es: ${id}`)
+        }).catch((err) => {
+            console.log('Error finalizando su Compra', err)
+        }).finally(() => {
+            console.log('setOrderId: ', orderId)
+            // alert(`Su compra ha sido Exitosa! El numero de su orden de compra es: `, orderId)
+        })
+    }
 
     return (
-        // Dentro del CartContext.Provider vive la informacion que los hijos pueden consumir
-        <CartContext.Provider value={{ cart, numberItems, clearCart, addItem, updateCart, removeItem }}>
+        <CartContext.Provider value={{ cart, numberItems, totalPrice, orderId, clearCart, addItem, updateCart, removeItem, endPurchase }}>
             {children}
         </CartContext.Provider>
     )

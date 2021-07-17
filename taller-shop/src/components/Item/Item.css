@@ -3,6 +3,7 @@ p {
   padding: 0;
 }
 .item-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -51,4 +52,22 @@ p {
   font-weight: bold;
   margin: 4px 0px;
   color: black;
+}
+
+.noStock{
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 30%;
+  height: 30%;
+  background-color: hsl(0, 100%, 50%);
+}
+.noStock span{
+  position: absolute;
+  left: 35%;
+  top: 32%;
+  transform: translate(-50%,-50%) rotate(-45deg);
+  font-weight: bold;
+  padding: 2px;
 }

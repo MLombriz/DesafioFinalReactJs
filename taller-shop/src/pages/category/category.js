@@ -39,7 +39,7 @@ const Category = () => {
                         <Page>
                             {
                                 loading ?
-                                    (<p>Loading...</p>)
+                                    (<p className='loadingCategory'>Loading {categoryId} Products...</p>)
                                     :
                                     (
                                         <div className='cat-container'>

@@ -1,0 +1,9 @@
+.cartWelcome {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 1px 22px 17px -19px rgba(0, 0, 0, 0.75);
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  

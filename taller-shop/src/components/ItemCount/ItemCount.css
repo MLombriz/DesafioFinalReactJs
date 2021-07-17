@@ -21,14 +21,14 @@
   color: black;
   font-weight: 700;
 }
-.Counter-div button {
+.Counter-div .btnCount {
   background-color: transparent;
   font-size: 25px;
   color: #b25040;
   border: none;
   margin: 0px 4px;
 }
-.Counter-div button:hover {
+.Counter-div .btnCount:hover {
   transform: scale(1.5);
 }
 .btn-carrito {
@@ -45,3 +45,18 @@
   background-color: #b25040;
   color: white;
 }
+.stockNull{
+  border: 1px solid white;
+  background-color: hsl(0, 0%, 50%);
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btnStockNull{
+  color: hsl(0, 0%, 50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+

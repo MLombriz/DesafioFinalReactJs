@@ -6,6 +6,7 @@
   align-items: flex-start;
   padding: 15px;
   min-height: 80vh;
+  position: relative;
 }
 
 .itemDetail-container .itemDetail-img {
@@ -65,3 +66,9 @@
   background-color: #7b7a7a;
   color: white;
 }
+
+.detailNoStock{
+  color: red;
+  font-weight: bold;
+}
+

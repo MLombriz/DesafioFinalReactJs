@@ -12,11 +12,11 @@ const Item = ({ item }) => {
                 <p className="item-description">{item.description}</p>
                 <p className="item-price">AR$ {(item.price).toLocaleString('es-AR', {
                     valute: 'USD',
-                    minimumFractionDigits: 2,
+                    minimumFractionDigits: 0,
                 })}</p>
+                <p className='noStock' hidden={item.stock === 0 ? false : true}><span>Out of Stock</span></p>
             </div>
         </NavLink>
-
     )
 }
 

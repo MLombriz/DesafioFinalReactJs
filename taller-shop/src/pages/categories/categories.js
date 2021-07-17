@@ -24,7 +24,7 @@ const Categories = () => {
         <Page>
             {
                 loading ?
-                    (<p>Cargando Categorias...</p>)
+                    (<p className='loadingCategories'>Cargando Categorias...</p>)
                     :
                     (
                         <div className='categories-container'>

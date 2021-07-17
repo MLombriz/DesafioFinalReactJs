@@ -34,7 +34,7 @@
     text-transform: uppercase;
     font-weight: bold;
     box-shadow: 1px 22px 17px -19px rgba(0, 0, 0, 0.75);
-
+    background-color: hsl(0, 0%, 85%);
 }
 .cartItem-row{
     display: grid;
@@ -42,10 +42,12 @@
     grid-template-areas: 
     "orderNumber descripcion precio cantidad  subtotal accion";
     text-align: center;
+    justify-content: center;
+    align-items: center;
     margin: 4px 5px;
     padding: 10px 5px;
     border: 1px solid transparent;
-    box-shadow: 1px 22px 17px -19px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 22px 17px -19px hsla(0, 0%, 0%, 0.75);
 }
 .cartItem-row:hover{
     background-color: hsl(0, 0%, 85%);
@@ -56,6 +58,7 @@
 } 
 .descripcion{
     grid-area: descripcion;
+    font-weight: bold;
 } 
 .cantidad{
     grid-area: cantidad;
@@ -65,36 +68,73 @@
 } 
 .subtotal{
     grid-area: subtotal;
+    font-weight: bold;
 } 
 .accion{
     grid-area: accion;
 }
+.btn-accion{
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    text-transform: uppercase;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    background-color: hsl(9, 100%, 64%);
+    color: white;
+    box-shadow: 3px 8px 12px -6px rgb(0 0 0 / 75%);
+}
+.btn-accion:hover{
+    background-color: hsl(9, 100%, 55%);
+}
 
 .totalPrice{
-    text-align: end;
-    font-size: 20px;
+    text-align: center;
+    font-size: 25px;
     padding-right: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid hsl(0, 0%, 85%);;
     
 }
+
 .totalPrice span{
     font-weight: bold;
 }
 
-.btnClean{
+.cartContainerButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0px;
+}
+.cartContainerButtons button{
     padding: 10px;
     border-radius: 5px;
-    margin: 2px;
-    width: 200px;
-    background-color: hsl(9, 100%, 64%);
-    color: white;
+    margin: 5px;
+    min-width: 200px;
     text-transform: uppercase;
     justify-self: center;
     align-self: center;
     border: none;
     box-shadow: 3px 8px 12px -6px rgb(0 0 0 / 75%);
 }
+
+.btnClean{
+    background-color: hsl(9, 100%, 64%);
+    color: white;
+    box-shadow: 3px 8px 12px -6px rgb(0 0 0 / 75%);
+}
 .btnClean:hover{
     background-color: hsl(9, 100%, 55%);
+}
+
+.btnEndPurchase{
+    background-color: hsl(123, 98%, 35%);
+    color: white;
+    box-shadow: 3px 8px 12px -6px rgb(0 0 0 / 75%);
+}
+.btnEndPurchase:hover{
+    background-color: hsl(123, 98%, 30%);
 }

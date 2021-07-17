@@ -26,17 +26,18 @@ const ItemDetail = ({ item }) => {
                 <p className="itemDetail-size">Medidas: {item.size}</p>
                 <p className="itemDetail-price">AR$ {(item.price).toLocaleString('es-AR', {
                     valute: 'USD',
-                    minimumFractionDigits: 2,
+                    minimumFractionDigits: 0,
                 })}</p>
                 <div className='ItemCount-container' hidden={hidden}>
                     <ItemCount stock={item.stock} onAdd={onAdd} />
+                    <p className='detailNoStock' hidden={item.stock === 0 ? false : true}><span>Sorry - Out Of Stock</span></p>
                 </div>
                 <div className='btn-container' hidden={!hidden}>
                     <Link to='/cart'>
-                        <button id='btnEnd'>Terminar mi compra</button>
+                        <button id='btnEnd'>Ir al Carrito</button>
                     </Link>
                     <Link to='/'>
-                        <button id='btnContinue'>Continuar comprando</button>
+                        <button id='btnContinue'>Continuar Comprando</button>
                     </Link>
                 </div>
             </div>

@@ -6,7 +6,6 @@ import { dataBase } from '../../firebase/firebase'
 const ItemListContainer = ({ greeting }) => {
     const [arrayItems, setArrayItems] = useState([]);
     const [loading, setLoading] = useState(true);
-    const arrayList = []
     useEffect(() => {
         setLoading(true);
         const db = dataBase;

@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Taller Urbano React App
+
+This project is an online shop of a Furniture Store. 
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

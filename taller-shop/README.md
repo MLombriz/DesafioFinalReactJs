@@ -2,6 +2,8 @@
 
 This project is an online shop of a Furniture Store. 
 
+![screen-gif](./taller-shop-gif.gif)
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

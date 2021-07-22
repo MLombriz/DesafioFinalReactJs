@@ -45,33 +45,31 @@ const CartProvider = ({ children, defaultCart = [] }) => {
     const updateCart = (obj) => {
         setCart([...cart, obj])
     }
-    const getOrder = () => {
+    const getOrder = (buyer) => {
         const orderItems = cart.map(
             ({ item, quantity }) => ({ id: item.id, title: item.title, price: item.price, quantity: quantity }))
         return {
             buyer: {
-                name: 'UserName',
-                phone: '+54 9 11 3202 5894',
-                email: 'comprador@gmail.com'
+                name: buyer.name,
+                surname: buyer.surname,
+                mail: buyer.mail
             },
             items: orderItems,
             date: firebase.firestore.Timestamp.fromDate(new Date()),
             totalPrice,
         }
     }
-    const endPurchase = () => {
-        const newOrder = getOrder()
+    const endPurchase = (buyer) => {
+        const newOrder = getOrder(buyer)
         const db = dataBase
         const orders = db.collection('orders')
         orders.add(newOrder).then(({ id }) => {
             setOrderId(id)
-            console.log('id de compra es:', id)
-            alert(`id de compra Generado es: ${id}`)
+            alert(`id de compra Generado es: ${id}. Ya le mandamos por mail su orden y numero de seguimiento`)
         }).catch((err) => {
             console.log('Error finalizando su Compra', err)
         }).finally(() => {
-            console.log('setOrderId: ', orderId)
-            // alert(`Su compra ha sido Exitosa! El numero de su orden de compra es: `, orderId)
+            clearCart()
         })
     }
 
